@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mystery Dinner</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <script>
+        function randomizeDinner() {
+            fetch('/mysterydinner')
+                .then(response => response.json())
+                .then(data => {
+                    const optionsDiv = document.getElementById('dinnerOptions');
+                    optionsDiv.innerHTML = `<p>${data.protein}</p>
+                                            <p>${data.addOns[0]}</p>
+                                            <p>${data.addOns[1]}</p>`;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+    <h1 style="text-align:center;">Mystery Dinner</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="dinnerOptions" style="text-align:center;">
+        <!-- Results will be displayed here -->
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="text-align:center; margin-top:20px;">
+        <button onclick="randomizeDinner()"></button>
+    </div>
+    <script src="js/randomizeDinner.js"></script>
+
+    
+</body>
+</html>
